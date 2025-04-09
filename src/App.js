@@ -994,14 +994,6 @@ const CaregiversSection = () => {
             )}
           </div>
           
-          <div className="mt-8">
-            <button className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-6 rounded-lg transition-colors shadow-lg">
-              {activeTab === 'app' 
-                ? 'Ver demostración de la app' 
-                : 'Explorar el portal web'}
-              <ArrowRight size={18} className="ml-2" />
-            </button>
-          </div>
         </div>
       </div>
       
