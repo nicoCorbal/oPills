@@ -18,17 +18,21 @@ import {
   Camera,
   Lock,
   Eye,
+  Globe,
   Mic,
   Database,
   Server,
   Code,
+  FileJson,
+  Image,
   Cpu,
   Building,
   Accessibility,
+  MessageSquare,
+  FileText,
+  Cloud,
   TrendingUp,
   Shield,
-  Clock,
-  BarChart4,
   Sparkles
 } from 'lucide-react';
 
@@ -134,14 +138,14 @@ const Hero = () => {
   return (
     <section 
       id="hero"
-      className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 text-white py-16 px-4 overflow-hidden"
+      className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 text-white px-4 overflow-hidden"
     >
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Círculos decorativos */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-teal-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-16 left-8 w-56 h-56 bg-teal-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-8 right-8 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-teal-600/10 rounded-full blur-3xl"></div>
         
         {/* Malla de puntos */}
         <div className="absolute inset-0 opacity-10" 
@@ -151,57 +155,55 @@ const Hero = () => {
              }}>
         </div>
         
-        {/* Formas de píldoras flotantes - Aumentadas para mayor presencia visual */}
-        <div className="absolute top-1/4 left-1/4 w-16 h-8 bg-teal-500/30 rounded-full transform rotate-45 animate-float-slow"></div>
-        <div className="absolute top-2/3 right-1/3 w-14 h-7 bg-teal-400/30 rounded-full transform -rotate-12 animate-float-medium"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-12 h-6 bg-teal-600/30 rounded-full transform rotate-30 animate-float-fast"></div>
-        <div className="absolute top-1/2 right-1/4 w-10 h-5 bg-teal-500/30 rounded-full transform rotate-15 animate-float-medium"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-18 h-9 bg-teal-400/30 rounded-full transform -rotate-20 animate-float-slow"></div>
+        {/* Formas de píldoras flotantes */}
+        <div className="absolute top-1/4 left-1/4 w-14 h-7 bg-teal-500/30 rounded-full transform rotate-45 animate-float-slow"></div>
+        <div className="absolute top-2/3 right-1/3 w-12 h-6 bg-teal-400/30 rounded-full transform -rotate-12 animate-float-medium"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-10 h-5 bg-teal-600/30 rounded-full transform rotate-30 animate-float-fast"></div>
+        <div className="absolute top-1/2 right-1/4 w-8 h-4 bg-teal-500/30 rounded-full transform rotate-15 animate-float-medium"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-14 h-7 bg-teal-400/30 rounded-full transform -rotate-20 animate-float-slow"></div>
       </div>
 
       {/* Contenedor principal - Centrado en la página */}
-      <div className="max-w-7xl mx-auto z-10 text-center">
+      <div className="max-w-5xl mx-auto z-10 text-center">
         {/* Logo/Badge superior */}
-        <div className="inline-flex items-center bg-gray-900/40 rounded-full px-4 py-2 mb-6 backdrop-blur-sm border border-gray-700/50">
-          <span className="flex h-3 w-3">
-            <span className="animate-ping absolute h-3 w-3 rounded-full bg-teal-400 opacity-75"></span>
-            <span className="relative rounded-full h-3 w-3 bg-teal-500"></span>
+        <div className="inline-flex items-center bg-gray-900/40 rounded-full px-3 py-1 mb-4 backdrop-blur-sm border border-gray-700/50">
+          <span className="flex h-2.5 w-2.5 relative">
+            <span className="animate-ping absolute h-2.5 w-2.5 rounded-full bg-teal-400 opacity-75"></span>
+            <span className="relative rounded-full h-2.5 w-2.5 bg-teal-500"></span>
           </span>
-          <span className="ml-2 text-sm font-medium">Gestión inteligente de medicación</span>
+          <span className="ml-2 text-xs font-medium">Gestión inteligente de medicación</span>
         </div>
         
-        {/* Título principal - Ampliado */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight max-w-4xl mx-auto">
+        {/* Título principal */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-3xl mx-auto">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-300">
             Toda tu medicación
           </span>
           <br />
           <span className="relative">
             en la palma de tu mano
-            <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" xmlns="http://www.w3.org/2000/svg">
+            <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 300 12" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 8C150 -8 250 18 295 8" stroke="#14b8a6" strokeWidth="3" strokeLinecap="round" fill="none" />
             </svg>
           </span>
         </h1>
         
-        {/* Descripción - Ampliada y centrada */}
-        <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          oPills revoluciona la gestión de medicamentos con una plataforma
-          accesible para todos, utilizando tecnología de vanguardia 
-          para mejorar tu calidad de vida y garantizar un seguimiento óptimo de tu tratamiento.
+        {/* Descripción */}
+        <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+          oPills revoluciona la gestión de medicamentos con una plataforma accesible para todos, utilizando tecnología de vanguardia para mejorar tu calidad de vida y garantizar un seguimiento óptimo de tu tratamiento.
         </p>
         
-        {/* Botones de llamada a la acción - Centrados */}
-        <div className="flex flex-col sm:flex-row gap-5 justify-center mb-16">
+        {/* Botones de llamada a la acción */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <a
             href="#solucion"
-            className="bg-teal-500 hover:bg-teal-600 text-white px-10 py-4 rounded-lg font-semibold shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 hover:scale-105 transform transition-all duration-300 text-lg"
+            className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 hover:scale-105 transform transition-all duration-300 text-base"
           >
             Descubre la Solución
           </a>
           <a
-            href="#funcionalidades"
-            className="group border-2 border-gray-300 hover:border-white text-gray-300 hover:text-white px-10 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-lg"
+            href="#tecnologia"
+            className="group border-2 border-gray-300 hover:border-white text-gray-300 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-base"
           >
             Ver Funcionalidades
             <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -209,53 +211,43 @@ const Hero = () => {
             </svg>
           </a>
         </div>
-        
+
         {/* Tarjetas con características clave */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
-            <div className="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <BellRing size={24} className="text-teal-400" aria-hidden="true" />
+        <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
+            <div className="w-10 h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <BellRing size={20} className="text-teal-400" aria-hidden="true" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Recordatorios Inteligentes</h3>
-            <p className="text-gray-300">Nunca olvides una dosis con alertas personalizadas que se adaptan a tu rutina diaria</p>
+            <h3 className="text-lg font-semibold text-white mb-1">Recordatorios Inteligentes</h3>
+            <p className="text-gray-300 text-sm">
+              Nunca olvides una dosis con alertas personalizadas que se adaptan a tu rutina diaria
+            </p>
           </div>
           
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
-            <div className="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users size={24} className="text-teal-400" aria-hidden="true" />
+          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
+            <div className="w-10 h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Users size={20} className="text-teal-400" aria-hidden="true" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Control Total por Voz</h3>
-            <p className="text-gray-300">Interactúa con oPills sin necesidad de usar las manos, ideal para personas con movilidad reducida</p>
+            <h3 className="text-lg font-semibold text-white mb-1">Accesibilidad total</h3>
+            <p className="text-gray-300 text-sm">
+              Interactúa con oPills sin necesidad de usar las manos, ideal para personas con movilidad reducida
+            </p>
           </div>
           
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
-            <div className="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Brain size={24} className="text-teal-400" aria-hidden="true" />
+          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
+            <div className="w-10 h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Brain size={20} className="text-teal-400" aria-hidden="true" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">IA Avanzada</h3>
-            <p className="text-gray-300">Tecnología que aprende tus patrones y optimiza la gestión de tu medicación automáticamente</p>
-          </div>
-        </div>
-        
-        {/* Estadísticas destacadas */}
-        <div className="mt-16 flex flex-wrap justify-center gap-12">
-          <div className="text-center">
-            <p className="text-4xl font-bold text-teal-400">+50%</p>
-            <p className="text-sm text-gray-400 mt-1">de usuarios no gestionan<br/>correctamente su medicación</p>
-          </div>
-          <div className="text-center">
-            <p className="text-4xl font-bold text-teal-400">100%</p>
-            <p className="text-sm text-gray-400 mt-1">accesible para<br/>todo tipo de usuarios</p>
-          </div>
-          <div className="text-center">
-            <p className="text-4xl font-bold text-teal-400">24/7</p>
-            <p className="text-sm text-gray-400 mt-1">asistencia<br/>inteligente</p>
+            <h3 className="text-lg font-semibold text-white mb-1">IA Avanzada</h3>
+            <p className="text-gray-300 text-sm">
+              Tecnología que aprende tus patrones y optimiza la gestión de tu medicación automáticamente
+            </p>
           </div>
         </div>
       </div>
       
       {/* Flecha de scroll down */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#problema" className="text-gray-400 hover:text-white transition-colors">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
@@ -263,7 +255,7 @@ const Hero = () => {
         </a>
       </div>
       
-      {/* Para animar elementos flotantes */}
+      {/* Animaciones para los elementos flotantes */}
       <style jsx>{`
         @keyframes float-slow {
           0%, 100% { transform: translateY(0) rotate(45deg); }
@@ -290,6 +282,7 @@ const Hero = () => {
     </section>
   );
 };
+
 // ------------------ Sección: El Problema ------------------
 // ------------------ Sección: El Problema (Expandida) ------------------
 const ProblemSection = () => {
@@ -593,7 +586,6 @@ const SDGCard = ({ number, title, description, icon }) => (
   </div>
 );
 
-// Sección principal de Impacto Social
 const ImpactSection = () => {
   // Definición de estadísticas
   const stats = [
@@ -641,37 +633,37 @@ const ImpactSection = () => {
     }
   ];
 
-  // Definición de principios EVISAR (del PDF)
+  // Definición de principios EVISAR (del PDF) usando iconos de lucide-react
   const principles = [
     {
-      letter: "E",
-      title: "Eficiencia",
-      description: "Optimización de recursos sanitarios y tiempo del paciente"
-    },
-    {
-      letter: "E",
-      title: "Eficacia",
-      description: "Resultados medibles en la mejora de la adherencia al tratamiento"
-    },
-    {
-      letter: "P",
-      title: "Precisión",
-      description: "Exactitud en la administración de medicamentos y dosis"
-    },
-    {
-      letter: "I",
+      icon: <Accessibility size={32} className="text-teal-500" />,
       title: "Inclusión",
       description: "Diseño universal accesible para todas las personas"
     },
     {
-      letter: "R",
+      icon: <Shield size={32} className="text-teal-500" />,
       title: "Responsabilidad",
       description: "Uso ético de la tecnología y los datos de salud"
     },
     {
-      letter: "C",
+      icon: <Heart size={32} className="text-teal-500" />,
       title: "Cuidado",
       description: "Enfoque centrado en el bienestar integral del paciente"
+    },
+    {
+      icon: <Activity size={32} className="text-teal-500" />,
+      title: "Eficiencia",
+      description: "Optimización de recursos sanitarios y tiempo del paciente"
+    },
+    {
+      icon: <Check size={32} className="text-teal-500" />,
+      title: "Eficacia",
+      description: "Resultados medibles en la mejora de la adherencia al tratamiento"
+    },
+    {
+      icon: <TrendingUp size={32} className="text-teal-500" />,
+      title: "Precisión",
+      description: "Exactitud en la administración de medicamentos y dosis"
     }
   ];
 
@@ -737,9 +729,7 @@ const ImpactSection = () => {
             {principles.map((principle, index) => (
               <div key={index} className="flex">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-10 h-10 bg-teal-900/70 rounded-lg flex items-center justify-center text-teal-400 font-bold">
-                    {principle.letter}
-                  </div>
+                  {principle.icon}
                 </div>
                 <div className="ml-4">
                   <h4 className="text-xl font-medium text-teal-400">{principle.title}</h4>
@@ -766,12 +756,15 @@ const ImpactSection = () => {
           Descubre cómo oPills está mejorando la calidad de vida de personas en todo el mundo
           a través de la tecnología accesible y centrada en el usuario.
         </p>
-        <a href="#contacto" className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-teal-500/20">
-          <span>Contáctanos</span>
-          <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
+        <a 
+    href="mailto:ochat2006@gmail.com" 
+    className="inline-flex items-center bg-teal-500 hover:bg-teal-600 text-white font-medium py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-teal-500/20"
+  >
+    <span>Contáctanos</span>
+    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+    </svg>
+  </a>
       </div>
     </section>
   );
@@ -820,198 +813,19 @@ const MedicationTimeGroup = ({ title, medications, bgColor }) => {
   );
 };
 
-// Componente del Mockup de la App
-const AppMockup = () => {
-  // Definir los medicamentos para cada momento del día
-  const medications = {
-    afterBreakfast: [
-      { icon: <Brain size={16} />, name: "IBUPROFENO", color: "red" },
-      { icon: <Activity size={16} />, name: "AMITRIPTILINA", color: "blue" }
-    ],
-    midday: [
-      { icon: <Heart size={16} />, name: "PARACETAMOL", color: "red" }
-    ],
-    afterLunch: [
-      { icon: <User size={16} />, name: "OMEPRAZOL", color: "green" },
-      { icon: <User size={16} />, name: "ROACUTAN", color: "purple" }
-    ],
-    midAfternoon: []
-  };
-
-  return (
-    <div className="bg-gray-800 border-8 border-gray-700 rounded-3xl w-64 h-[520px] overflow-hidden shadow-2xl relative">
-      {/* Notch del teléfono */}
-      <div className="bg-gray-900 w-32 h-6 absolute top-0 left-1/2 transform -translate-x-1/2 rounded-b-xl z-10"></div>
-      
-      {/* Pantalla de la app */}
-      <div className="h-full bg-gray-100 p-4 flex flex-col">
-        {/* Encabezado */}
-        <h3 className="text-gray-900 font-bold text-lg mb-4">My Pill Box</h3>
-        
-        {/* Grupos de medicamentos por hora */}
-        <div className="overflow-auto flex-grow">
-          <MedicationTimeGroup 
-            title="AFTERBREAKFAST" 
-            medications={medications.afterBreakfast}
-            bgColor="bg-green-100"
-          />
-          
-          <MedicationTimeGroup 
-            title="MIDDAY" 
-            medications={medications.midday}
-            bgColor="bg-yellow-100"
-          />
-          
-          <MedicationTimeGroup 
-            title="AFTERLUNCH" 
-            medications={medications.afterLunch}
-            bgColor="bg-purple-100"
-          />
-          
-          <div className="bg-pink-100 mb-4 rounded-lg p-3">
-            <h4 className="text-gray-900 font-bold text-sm">MIDAFTERNOON</h4>
-          </div>
-        </div>
-        
-        {/* Barra de navegación inferior */}
-        <div className="absolute bottom-0 left-0 right-0 bg-black h-14 flex justify-between items-center px-6">
-          <div className="text-white">
-            <div className="w-6 h-6 flex flex-col items-center justify-center">
-              <div className="w-5 h-0.5 bg-white mb-1"></div>
-              <div className="w-5 h-0.5 bg-white mb-1"></div>
-              <div className="w-5 h-0.5 bg-white"></div>
-            </div>
-          </div>
-          <div className="text-white">
-            <div className="w-6 h-6 flex items-center justify-center">
-              <div className="w-4 h-0.5 bg-white"></div>
-              <div className="w-0.5 h-4 bg-white absolute"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
-// Componente del Mockup del Portal Web para Cuidadores
-const WebPortalMockup = () => {
-  return (
-    <div className="bg-gray-800 border-8 border-gray-700 rounded-lg w-[380px] h-[520px] overflow-hidden shadow-2xl relative">
-      {/* Barra de navegación superior */}
-      <div className="bg-teal-700 p-3 flex items-center justify-between">
-        <div className="flex items-center">
-          <Pill className="text-white mr-2" size={20} />
-          <span className="text-white font-bold">oPills Portal para Cuidadores</span>
-        </div>
-        <div className="flex space-x-2">
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        </div>
-      </div>
-      
-      {/* Contenido del portal */}
-      <div className="bg-gray-100 h-full p-4">
-        <div className="flex justify-between mb-4">
-          <h3 className="font-bold text-gray-800">Panel de Control</h3>
-          <div className="flex items-center">
-            <span className="text-sm text-gray-600 mr-2">María García</span>
-            <div className="w-8 h-8 bg-teal-600 rounded-full flex items-center justify-center text-white">
-              MG
-            </div>
-          </div>
-        </div>
-        
-        {/* Dashboard */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="bg-white p-3 rounded-lg shadow">
-            <div className="flex items-center text-teal-600 mb-1">
-              <Users size={16} className="mr-1" />
-              <h4 className="text-sm font-medium">Pacientes</h4>
-            </div>
-            <p className="text-2xl font-bold text-gray-800">3</p>
-            <p className="text-xs text-gray-500">Activos ahora</p>
-          </div>
-          
-          <div className="bg-white p-3 rounded-lg shadow">
-            <div className="flex items-center text-orange-600 mb-1">
-              <Pill size={16} className="mr-1" />
-              <h4 className="text-sm font-medium">Medicamentos</h4>
-            </div>
-            <p className="text-2xl font-bold text-gray-800">12</p>
-            <p className="text-xs text-gray-500">Total programados</p>
-          </div>
-        </div>
-        
-        {/* Lista de pacientes */}
-        <div className="bg-white rounded-lg shadow p-3 mb-4">
-          <h4 className="font-medium text-gray-800 mb-2">Pacientes a cargo</h4>
-          
-          <div className="space-y-3">
-            <div className="flex items-center justify-between p-2 bg-teal-50 rounded border-l-4 border-teal-500">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-teal-200 rounded-full flex items-center justify-center text-teal-800 mr-2">
-                  JR
-                </div>
-                <div>
-                  <p className="text-sm font-medium">Juan Rodríguez</p>
-                  <p className="text-xs text-gray-500">Última toma: 14:30</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full">100%</span>
-                <ArrowRight size={16} className="text-gray-400 ml-2" />
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-between p-2 bg-red-50 rounded border-l-4 border-red-500">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-red-200 rounded-full flex items-center justify-center text-red-800 mr-2">
-                  LM
-                </div>
-                <div>
-                  <p className="text-sm font-medium">Luis Martínez</p>
-                  <p className="text-xs text-gray-500">Olvidó: 12:00</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <span className="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded-full">75%</span>
-                <ArrowRight size={16} className="text-gray-400 ml-2" />
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-between p-2 bg-yellow-50 rounded border-l-4 border-yellow-500">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-yellow-200 rounded-full flex items-center justify-center text-yellow-800 mr-2">
-                  CS
-                </div>
-                <div>
-                  <p className="text-sm font-medium">Carmen Sánchez</p>
-                  <p className="text-xs text-gray-500">Próxima toma: 16:00</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full">90%</span>
-                <ArrowRight size={16} className="text-gray-400 ml-2" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Sección principal de Cuidadores
 const CaregiversSection = () => {
   const [activeTab, setActiveTab] = useState('app'); // 'app' o 'portal'
-  
+
+  // Rutas de las imágenes de los mockups (actualiza estas rutas según tus archivos)
+  const appMockupImageUrl = '/galeria/mockupmovil.jpg'; 
+  const portalMockupImageUrl = '/galeria/mockupordenador.jpg';
+
   return (
     <section id="solucion" className="px-4 py-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 relative">
+      {/* Fondo decorativo */}
       <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-teal-900/20 to-gray-900/20 -z-10"></div>
       
+      {/* Encabezado de la sección */}
       <div className="max-w-3xl mx-auto text-center mb-16">
         <div className="inline-block p-2 bg-teal-600/20 rounded-lg mb-4">
           <Users size={30} className="text-teal-500" aria-hidden="true" />
@@ -1057,9 +871,21 @@ const CaregiversSection = () => {
       </div>
       
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        {/* Columna izquierda: Mockup */}
+        {/* Columna izquierda: Fotografía del mockup */}
         <div className="flex justify-center">
-          {activeTab === 'app' ? <AppMockup /> : <WebPortalMockup />}
+          {activeTab === 'app' ? (
+            <img 
+              src={appMockupImageUrl} 
+              alt="Mockup de la App" 
+              className="w-64 h-auto rounded-lg shadow-2xl" 
+            />
+          ) : (
+            <img 
+              src={portalMockupImageUrl} 
+              alt="Mockup del Portal Web" 
+              className="w-full max-w-[600px] h-auto rounded-lg shadow-2xl"
+              />
+          )}
         </div>
         
         {/* Columna derecha: Características */}
@@ -1072,7 +898,6 @@ const CaregiversSection = () => {
           
           <div className="space-y-6">
             {activeTab === 'app' ? (
-              // Características de la app
               <>
                 <div className="flex">
                   <div className="flex-shrink-0 mt-1">
@@ -1120,7 +945,6 @@ const CaregiversSection = () => {
                 </div>
               </>
             ) : (
-              // Características del portal web para cuidadores
               <>
                 <div className="flex">
                   <div className="flex-shrink-0 mt-1">
@@ -1233,7 +1057,6 @@ const CaregiversSection = () => {
   );
 };
 
-
 // ------------------ Sección: Tecnología y Funcionalidades ------------------
 
 const TechnologySection = () => {
@@ -1284,73 +1107,70 @@ const TechnologySection = () => {
       items: [
         {
           icon: <Code size={24} className="text-white" />,
-          title: "React Native",
-          description: "Framework para desarrollo móvil multiplataforma que permite una experiencia nativa tanto en iOS como en Android."
+          title: "Frontend Web (React) y Móvil (Jetpack Compose)",
+          description: "Interfaces de usuario multiplataforma con React para web y Jetpack Compose para la experiencia nativa en Android."
         },
         {
           icon: <Server size={24} className="text-white" />,
-          title: "Node.js & Express",
-          description: "Backend robusto y escalable que gestiona las peticiones y la lógica de negocio con alta eficiencia."
+          title: "Backend Web (Spring Boot) y Móvil (Kotlin)",
+          description: "Servidores robustos y escalables que gestionan la lógica de negocio para las aplicaciones web y móvil."
         },
         {
           icon: <Database size={24} className="text-white" />,
-          title: "MongoDB",
-          description: "Base de datos NoSQL que permite almacenar y gestionar información de manera flexible y segura."
+          title: "Base de datos con Supabase",
+          description: "Almacenamiento persistente que permite gestionar información de manera flexible y segura a través de la API OpenAI Supabase."
         },
         {
-          icon: <Lock size={24} className="text-white" />,
-          title: "JWT & OAuth 2.0",
-          description: "Estándares de autenticación y autorización para garantizar la seguridad en el acceso a datos."
+          icon: <Mic size={24} className="text-white" />,
+          title: "Microservicio de Transcripción de Voz con OpenAI Whisper",
+          description: "Microservicio Flask que procesa comandos de voz y los convierte a texto utilizando la API OpenAI Whisper."
         },
         {
-          icon: <RefreshCw size={24} className="text-white" />,
-          title: "API RESTful",
-          description: "Interfaces de programación que facilitan la comunicación entre el frontend y el backend de manera eficiente."
+          icon: <Image size={24} className="text-white" />,
+          title: "Microservicio de Análisis de Imágenes y Reconocimiento de Texto",
+          description: "Microservicio Flask que analiza imágenes de medicamentos utilizando Remove.bg API y OpenAI Imágenes."
         },
         {
-          icon: <Cpu size={24} className="text-white" />,
-          title: "Procesamiento en Edge",
-          description: "Optimización del rendimiento mediante procesamiento local de tareas que no requieren conexión constante."
+          icon: <MessageSquare size={24} className="text-white" />,
+          title: "Microservicio de Resolución de Consultas sobre Medicamentos y Tratamientos",
+          description: "Microservicio Flask que procesa y responde a preguntas de los usuarios sobre medicamentos y tratamientos."
+        },
+        {
+          icon: <FileText size={24} className="text-white" />,
+          title: "Microservicio de Generación de Explicaciones Detalladas con OpenAI",
+          description: "Microservicio Flask que genera explicaciones detalladas sobre medicamentos utilizando la API OpenAI texto."
+        },
+        {
+          icon: <FileJson size={24} className="text-white" />,
+          title: "Microservicio de Conversión de Respuestas a Estructura JSON",
+          description: "Microservicio Flask que estructura la información textual en formato JSON para su procesamiento avanzado."
         }
       ]
     },
+    
     ia: {
       title: "Inteligencia Artificial Avanzada",
       description: "oPills integra múltiples tecnologías de IA para ofrecer una experiencia personalizada, accesible y eficiente en la gestión de medicamentos.",
       items: [
         {
-          icon: <Brain size={24} className="text-white" />,
-          title: "Procesamiento de Lenguaje Natural",
-          description: "Comprensión del lenguaje cotidiano para interactuar de manera natural mediante comandos de voz o texto."
-        },
-        {
           icon: <Mic size={24} className="text-white" />,
-          title: "Reconocimiento de Voz Avanzado",
-          description: "Sistema optimizado para reconocer términos médicos y farmacéuticos con precisión incluso en entornos ruidosos."
+          title: "API OpenAI Whisper",
+          description: "Servicio externo que proporciona reconocimiento de voz avanzado para transcribir comandos hablados a texto."
         },
         {
-          icon: <Eye size={24} className="text-white" />,
-          title: "Visión por Computador",
-          description: "Tecnología que reconoce medicamentos mediante imágenes, identificando pastillas, cajas o prospectos."
+          icon: <Image size={24} className="text-white" />,
+          title: "APIs externas de procesamiento visual",
+          description: "Remove.bg API y OpenAI Imágenes para el análisis y reconocimiento de medicamentos mediante fotografías."
         },
         {
-          icon: <Activity size={24} className="text-white" />,
-          title: "Algoritmos Predictivos",
-          description: "Predicción de patrones de adherencia y recomendaciones personalizadas basadas en el historial del usuario."
-        },
-        {
-          icon: <Lock size={24} className="text-white" />,
-          title: "Modelos On-Device",
-          description: "IA que funciona localmente en el dispositivo para preservar la privacidad, sin enviar datos sensibles a servidores externos."
-        },
-        {
-          icon: <RefreshCw size={24} className="text-white" />,
-          title: "Aprendizaje Adaptativo",
-          description: "El sistema mejora con el uso, adaptándose a las preferencias y necesidades específicas de cada usuario."
+          icon: <Cloud size={24} className="text-white" />,
+          title: "API OpenAI texto",
+          description: "Servicio externo de procesamiento de lenguaje natural para generar y analizar contenido textual relacionado con medicamentos."
         }
       ]
     }
   };
+  
   
   // Iconos para la sección "Cómo funciona"
   const howItWorksSteps = [
@@ -1502,27 +1322,13 @@ const TechnologySection = () => {
       <div className="max-w-6xl mx-auto mt-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Arquitectura Segura y Privada</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Arquitectura Segura y Avanzada</h3>
             <p className="text-gray-300 mb-6">
-              oPills ha sido diseñado desde cero priorizando la privacidad y seguridad de los datos médicos, 
-              implementando las mejores prácticas y estándares del sector sanitario.
+              oPills ha sido diseñado con una arquitectura robusta de microservicios que integra tecnologías de vanguardia
+              para el procesamiento de audio, imágenes y lenguaje natural, priorizando la seguridad y privacidad de los datos médicos.
             </p>
             
             <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-900 text-teal-400">
-                    <Lock size={18} />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-lg font-medium text-white">Encriptación de datos</h4>
-                  <p className="mt-1 text-gray-300 text-sm">
-                    Todos los datos sensibles se almacenan y transmiten utilizando encriptación de grado médico.
-                  </p>
-                </div>
-              </div>
-              
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-900 text-teal-400">
@@ -1530,9 +1336,9 @@ const TechnologySection = () => {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-white">Procesamiento local</h4>
+                  <h4 className="text-lg font-medium text-white">Servidores especializados</h4>
                   <p className="mt-1 text-gray-300 text-sm">
-                    La mayoría del procesamiento se realiza localmente en el dispositivo, minimizando la transferencia de datos sensibles.
+                    5 servidores Flask gestionan diferentes tipos de datos: audio a texto, foto a texto, texto a JSON, consultas y descripción.
                   </p>
                 </div>
               </div>
@@ -1540,13 +1346,27 @@ const TechnologySection = () => {
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-900 text-teal-400">
-                    <Eye size={18} />
+                    <Server size={18} />
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-medium text-white">Control de permisos</h4>
+                  <h4 className="text-lg font-medium text-white">Backend dual</h4>
                   <p className="mt-1 text-gray-300 text-sm">
-                    Los usuarios tienen control total sobre qué información comparten y con quién la comparten.
+                    Backend web con Spring Boot y móvil con Kotlin, conectados a Supabase para una gestión eficiente de los datos.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-900 text-teal-400">
+                    <Cloud size={18} />
+                  </div>
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lg font-medium text-white">APIs inteligentes</h4>
+                  <p className="mt-1 text-gray-300 text-sm">
+                    Integración con servicios externos como OpenAI Whisper, Imágenes, y texto, además de Remove.bg para procesamiento visual.
                   </p>
                 </div>
               </div>
@@ -1558,71 +1378,112 @@ const TechnologySection = () => {
             
             {/* Diagrama simplificado de arquitectura */}
             <div className="relative">
-              {/* Nivel de dispositivo */}
+              {/* Nivel de Frontend */}
               <div className="border border-gray-700 rounded-lg p-4 bg-gray-800/70 mb-4">
                 <h5 className="font-medium text-teal-400 mb-3 flex items-center">
-                  <Smartphone size={18} className="mr-2" />
-                  Aplicación oPills
+                  <Globe size={18} className="mr-2" />
+                  Frontend
                 </h5>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   <div className="bg-gray-700/60 p-2 rounded text-center">
-                    <p className="text-xs text-gray-300">UI</p>
-                    <p className="text-xs text-teal-400">React Native</p>
+                    <p className="text-xs text-gray-300">Web</p>
+                    <p className="text-xs text-teal-400">React</p>
                   </div>
                   <div className="bg-gray-700/60 p-2 rounded text-center">
-                    <p className="text-xs text-gray-300">Lógica</p>
-                    <p className="text-xs text-teal-400">Local Store</p>
-                  </div>
-                  <div className="bg-gray-700/60 p-2 rounded text-center">
-                    <p className="text-xs text-gray-300">IA Local</p>
-                    <p className="text-xs text-teal-400">TensorFlow</p>
+                    <p className="text-xs text-gray-300">Móvil</p>
+                    <p className="text-xs text-teal-400">Jetpack Compose</p>
                   </div>
                 </div>
               </div>
               
               {/* Flecha de conexión */}
-              <div className="flex justify-center mb-4">
-                <div className="w-0.5 h-8 bg-gray-600 relative">
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-600"></div>
-                </div>
-              </div>
+<div className="flex justify-center mb-4">
+  <div className="w-0.5 h-12 bg-gray-600 relative">
+    <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 border-x-8 border-x-transparent border-t-8 border-t-gray-600"></div>
+  </div>
+</div>
               
-              {/* Nivel de servidor */}
+              {/* Nivel de Backend */}
               <div className="border border-gray-700 rounded-lg p-4 bg-gray-800/70 mb-4">
                 <h5 className="font-medium text-teal-400 mb-3 flex items-center">
                   <Server size={18} className="mr-2" />
-                  Backend seguro
+                  Backend
                 </h5>
                 <div className="grid grid-cols-3 gap-2">
                   <div className="bg-gray-700/60 p-2 rounded text-center">
-                    <p className="text-xs text-gray-300">API</p>
-                    <p className="text-xs text-teal-400">Node.js</p>
+                    <p className="text-xs text-gray-300">Web</p>
+                    <p className="text-xs text-teal-400">Spring Boot</p>
                   </div>
                   <div className="bg-gray-700/60 p-2 rounded text-center">
-                    <p className="text-xs text-gray-300">Auth</p>
-                    <p className="text-xs text-teal-400">JWT</p>
+                    <p className="text-xs text-gray-300">Móvil</p>
+                    <p className="text-xs text-teal-400">Kotlin</p>
                   </div>
                   <div className="bg-gray-700/60 p-2 rounded text-center">
                     <p className="text-xs text-gray-300">DB</p>
-                    <p className="text-xs text-teal-400">MongoDB</p>
+                    <p className="text-xs text-teal-400">Supabase</p>
                   </div>
                 </div>
               </div>
               
-              {/* Nivel de cuidadores */}
+              {/* Flecha de conexión */}
+<div className="flex justify-center mb-4">
+  <div className="w-0.5 h-12 bg-gray-600 relative">
+    <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 border-x-8 border-x-transparent border-t-8 border-t-gray-600"></div>
+  </div>
+</div>
+              
+              {/* Nivel de Servidores Python */}
+              <div className="border border-gray-700 rounded-lg p-4 bg-gray-800/70 mb-4">
+                <h5 className="font-medium text-teal-400 mb-3 flex items-center">
+                  <Code size={18} className="mr-2" />
+                  Servidores Python (Flask)
+                </h5>
+                <div className="grid grid-cols-3 gap-2 mb-2">
+                  <div className="bg-gray-700/60 p-2 rounded text-center">
+                    <p className="text-xs text-gray-300">Audio a texto</p>
+                  </div>
+                  <div className="bg-gray-700/60 p-2 rounded text-center">
+                    <p className="text-xs text-gray-300">Foto a texto</p>
+                  </div>
+                  <div className="bg-gray-700/60 p-2 rounded text-center">
+                    <p className="text-xs text-gray-300">Texto a JSON</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="bg-gray-700/60 p-2 rounded text-center">
+                    <p className="text-xs text-gray-300">Consultas</p>
+                  </div>
+                  <div className="bg-gray-700/60 p-2 rounded text-center">
+                    <p className="text-xs text-gray-300">Descripción</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Flecha de conexión */}
+<div className="flex justify-center mb-4">
+  <div className="w-0.5 h-12 bg-gray-600 relative">
+    <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 border-x-8 border-x-transparent border-t-8 border-t-gray-600"></div>
+  </div>
+</div>
+              
+              {/* Nivel de Servicios Externos */}
               <div className="border border-gray-700 rounded-lg p-4 bg-gray-800/70">
                 <h5 className="font-medium text-teal-400 mb-3 flex items-center">
-                  <Monitor size={18} className="mr-2" />
-                  Portal para cuidadores
+                  <Cloud size={18} className="mr-2" />
+                  Servicios Externos
                 </h5>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="bg-gray-700/60 p-2 rounded text-center">
-                    <p className="text-xs text-gray-300">Web App</p>
-                    <p className="text-xs text-teal-400">React</p>
+                    <p className="text-xs text-gray-300">Remove.bg API</p>
                   </div>
                   <div className="bg-gray-700/60 p-2 rounded text-center">
-                    <p className="text-xs text-gray-300">Dashboard</p>
-                    <p className="text-xs text-teal-400">Charts.js</p>
+                    <p className="text-xs text-gray-300">OpenAI Imágenes</p>
+                  </div>
+                  <div className="bg-gray-700/60 p-2 rounded text-center">
+                    <p className="text-xs text-gray-300">OpenAI Whisper</p>
+                  </div>
+                  <div className="bg-gray-700/60 p-2 rounded text-center">
+                    <p className="text-xs text-gray-300">OpenAI texto</p>
                   </div>
                 </div>
               </div>
@@ -1684,22 +1545,8 @@ const Footer = () => {
           <FooterSection title="Contacto">
             <ul className="mt-2 space-y-2">
               <li className="flex items-start">
-                <span className="mr-1 text-gray-400">Teléfono:</span>
-                <FooterLink href="tel:+34123456789">+34 123 456 789</FooterLink>
-              </li>
-              <li className="flex items-start">
                 <span className="mr-1 text-gray-400">Email:</span>
-                <FooterLink href="mailto:info@opills.com">info@opills.com</FooterLink>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-1 text-gray-400">Dirección:</span>
-                <FooterLink 
-                  href="https://www.google.com/maps" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  Calle de la Salud 123, Madrid
-                </FooterLink>
+                <FooterLink href="mailto:info@opills.com">ochat2006@gmail.com</FooterLink>
               </li>
             </ul>
           </FooterSection>
