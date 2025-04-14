@@ -1604,7 +1604,7 @@ const App = () => {
   }, [isMenuOpen]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="overflow-x-hidden min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       <Navbar isScrolled={isScrolled} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
       <main>
         <Hero />
