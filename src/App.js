@@ -132,50 +132,49 @@ const Navbar = memo(({ isScrolled, toggleMenu, isMenuOpen }) => {
 
 Navbar.displayName = 'Navbar';
 
-// ------------------ Sección: Hero ------------------
-// ------------------ Sección: Hero Modificada ------------------
+// ------------------ Sección: Hero (Optimizado para móviles) ------------------
 const Hero = () => {
   return (
     <section 
       id="hero"
-      className="relative w-full h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 text-white px-4 overflow-hidden"
+      className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 text-white px-4 overflow-hidden py-20 md:py-0"
     >
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Círculos decorativos */}
-        <div className="absolute top-16 left-8 w-56 h-56 bg-teal-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-8 right-8 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-teal-600/10 rounded-full blur-3xl"></div>
+        {/* Círculos decorativos - Reducidos para móviles */}
+        <div className="absolute top-16 left-8 w-32 sm:w-56 h-32 sm:h-56 bg-teal-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-8 right-8 w-40 sm:w-80 h-40 sm:h-80 bg-teal-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/4 w-32 sm:w-72 h-32 sm:h-72 bg-teal-600/10 rounded-full blur-3xl"></div>
         
-        {/* Malla de puntos */}
+        {/* Malla de puntos - Más pequeña en móviles */}
         <div className="absolute inset-0 opacity-10" 
              style={{
                backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
-               backgroundSize: '30px 30px'
+               backgroundSize: '15px 15px'
              }}>
         </div>
         
-        {/* Formas de píldoras flotantes */}
-        <div className="absolute top-1/4 left-1/4 w-14 h-7 bg-teal-500/30 rounded-full transform rotate-45 animate-float-slow"></div>
-        <div className="absolute top-2/3 right-1/3 w-12 h-6 bg-teal-400/30 rounded-full transform -rotate-12 animate-float-medium"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-10 h-5 bg-teal-600/30 rounded-full transform rotate-30 animate-float-fast"></div>
-        <div className="absolute top-1/2 right-1/4 w-8 h-4 bg-teal-500/30 rounded-full transform rotate-15 animate-float-medium"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-14 h-7 bg-teal-400/30 rounded-full transform -rotate-20 animate-float-slow"></div>
+        {/* Formas de píldoras flotantes - Adaptadas para móviles */}
+        <div className="absolute top-1/4 left-1/4 w-8 sm:w-14 h-4 sm:h-7 bg-teal-500/30 rounded-full transform rotate-45 animate-float-slow"></div>
+        <div className="absolute top-2/3 right-1/3 w-6 sm:w-12 h-3 sm:h-6 bg-teal-400/30 rounded-full transform -rotate-12 animate-float-medium"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-5 sm:w-10 h-2.5 sm:h-5 bg-teal-600/30 rounded-full transform rotate-30 animate-float-fast"></div>
+        <div className="absolute top-1/2 right-1/4 w-5 sm:w-8 h-2.5 sm:h-4 bg-teal-500/30 rounded-full transform rotate-15 animate-float-medium"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-8 sm:w-14 h-4 sm:h-7 bg-teal-400/30 rounded-full transform -rotate-20 animate-float-slow"></div>
       </div>
 
-      {/* Contenedor principal - Centrado en la página */}
-      <div className="max-w-5xl mx-auto z-10 text-center">
+      {/* Contenedor principal - Centrado en la página con mejor padding vertical en móviles */}
+      <div className="max-w-5xl mx-auto z-10 text-center px-3 sm:px-4 pt-16 md:pt-0">
         {/* Logo/Badge superior */}
-        <div className="inline-flex items-center bg-gray-900/40 rounded-full px-3 py-1 mb-4 backdrop-blur-sm border border-gray-700/50">
-          <span className="flex h-2.5 w-2.5 relative">
-            <span className="animate-ping absolute h-2.5 w-2.5 rounded-full bg-teal-400 opacity-75"></span>
-            <span className="relative rounded-full h-2.5 w-2.5 bg-teal-500"></span>
+        <div className="inline-flex items-center bg-gray-900/40 rounded-full px-3 py-1 mb-6 backdrop-blur-sm border border-gray-700/50">
+          <span className="flex h-2 w-2 sm:h-2.5 sm:w-2.5 relative">
+            <span className="animate-ping absolute h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-teal-400 opacity-75"></span>
+            <span className="relative rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-teal-500"></span>
           </span>
           <span className="ml-2 text-xs font-medium">Gestión inteligente de medicación</span>
         </div>
         
-        {/* Título principal */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-3xl mx-auto">
+        {/* Título principal - Ajustado para móviles */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 leading-tight max-w-3xl mx-auto px-1">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-300">
             Toda tu medicación
           </span>
@@ -188,86 +187,86 @@ const Hero = () => {
           </span>
         </h1>
         
-        {/* Descripción */}
-        <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+        {/* Descripción - Texto más compacto en móviles */}
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed px-1">
           oPills revoluciona la gestión de medicamentos con una plataforma accesible para todos, utilizando tecnología de vanguardia para mejorar tu calidad de vida y garantizar un seguimiento óptimo de tu tratamiento.
         </p>
         
-        {/* Botones de llamada a la acción */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a
-            href="#solucion"
-            className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 hover:scale-105 transform transition-all duration-300 text-base"
-          >
-            Descubre la Solución
-          </a>
-          <a
-            href="#tecnologia"
-            className="group border-2 border-gray-300 hover:border-white text-gray-300 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-base"
-          >
-            Ver Funcionalidades
-            <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-        </div>
+        {/* Botones de llamada a la acción - Mejor espacio vertical en móviles */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-2">
+  <a
+    href="#solucion"
+    className="bg-teal-500 hover:bg-teal-600 text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold shadow-lg shadow-teal-500/20 hover:shadow-teal-500/30 hover:scale-105 transform transition-all duration-300 text-sm sm:text-base"
+  >
+    Descubre la Solución
+  </a>
+  <a
+    href="#tecnologia"
+    className="group border-2 border-gray-300 hover:border-white text-gray-300 hover:text-white px-5 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-sm sm:text-base"
+  >
+    Ver Funcionalidades
+    <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</div>
 
-        {/* Tarjetas con características clave */}
-        <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
-            <div className="w-10 h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-              <BellRing size={20} className="text-teal-400" aria-hidden="true" />
+        {/* Tarjetas con características clave - Mejor altura y espaciado en móviles */}
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 max-w-xs sm:max-w-3xl mx-auto sm:grid-cols-2 md:grid-cols-3">
+          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-3 sm:p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+              <BellRing size={16} className="text-teal-400" aria-hidden="true" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-1">Recordatorios Inteligentes</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-1">Recordatorios Inteligentes</h3>
+            <p className="text-gray-300 text-xs sm:text-sm">
               Nunca olvides una dosis con alertas personalizadas que se adaptan a tu rutina diaria
             </p>
           </div>
           
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
-            <div className="w-10 h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Users size={20} className="text-teal-400" aria-hidden="true" />
+          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-3 sm:p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+              <Users size={16} className="text-teal-400" aria-hidden="true" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-1">Accesibilidad total</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-1">Accesibilidad total</h3>
+            <p className="text-gray-300 text-xs sm:text-sm">
               Interactúa con oPills sin necesidad de usar las manos, ideal para personas con movilidad reducida
             </p>
           </div>
           
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30">
-            <div className="w-10 h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-              <Brain size={20} className="text-teal-400" aria-hidden="true" />
+          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-3 sm:p-4 hover:bg-gray-800/40 transition-all hover:scale-105 hover:border-teal-500/30 sm:col-span-2 md:col-span-1">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+              <Brain size={16} className="text-teal-400" aria-hidden="true" />
             </div>
-            <h3 className="text-lg font-semibold text-white mb-1">IA Avanzada</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="text-base sm:text-lg font-semibold text-white mb-1">IA Avanzada</h3>
+            <p className="text-gray-300 text-xs sm:text-sm">
               Tecnología que aprende tus patrones y optimiza la gestión de tu medicación automáticamente
             </p>
           </div>
         </div>
       </div>
       
-      {/* Flecha de scroll down */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Flecha de scroll down - Mejor posicionada en móviles */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
         <a href="#problema" className="text-gray-400 hover:text-white transition-colors">
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
           </svg>
         </a>
       </div>
       
-      {/* Animaciones para los elementos flotantes */}
+      {/* Animaciones para los elementos flotantes - Ligeramente más suaves en móviles */}
       <style jsx>{`
         @keyframes float-slow {
           0%, 100% { transform: translateY(0) rotate(45deg); }
-          50% { transform: translateY(-20px) rotate(45deg); }
+          50% { transform: translateY(-15px) rotate(45deg); }
         }
         @keyframes float-medium {
           0%, 100% { transform: translateY(0) rotate(-12deg); }
-          50% { transform: translateY(-15px) rotate(-12deg); }
+          50% { transform: translateY(-10px) rotate(-12deg); }
         }
         @keyframes float-fast {
           0%, 100% { transform: translateY(0) rotate(30deg); }
-          50% { transform: translateY(-10px) rotate(30deg); }
+          50% { transform: translateY(-8px) rotate(30deg); }
         }
         .animate-float-slow {
           animation: float-slow 8s ease-in-out infinite;
@@ -283,7 +282,6 @@ const Hero = () => {
   );
 };
 
-// ------------------ Sección: El Problema ------------------
 // ------------------ Sección: El Problema (Expandida) ------------------
 const ProblemSection = () => {
   // Datos principales sobre el problema
@@ -1511,8 +1509,7 @@ const Footer = () => {
   const navLinks = [
     { href: "#problema", label: "El Problema" },
     { href: "#solucion", label: "La Solución: oPills" },
-    { href: "#funcionalidades", label: "Funcionalidades Avanzadas" },
-    { href: "#ia", label: "Inteligencia Artificial Avanzada" },
+    { href: "#tecnologia", label: "Funcionalidades Avanzadas" },
     { href: "#impacto", label: "Impacto Social" },
   ];
 
