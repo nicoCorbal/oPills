@@ -16,13 +16,6 @@ const Header = () => {
           <img src="/galeria/oPills_logo.png" alt="oPills logo" className="h-12 w-12 mr-2" />
           <span className="text-xl font-bold text-gray-900 tracking-tight">oPills</span>
         </div>
-        {/* Enlaces de navegación */}
-        <nav className="flex space-x-10">
-          <a href="#" className="text-gray-900 font-semibold border-b-2 border-blue-400 pb-1 transition-colors duration-200">Home</a>
-          <a href="#" className="text-gray-900 font-medium hover:text-blue-400 hover:border-b-2 hover:border-blue-400 pb-1 transition-colors duration-200">About</a>
-          <a href="#" className="text-gray-900 font-medium hover:text-blue-400 hover:border-b-2 hover:border-blue-400 pb-1 transition-colors duration-200">Services</a>
-          <a href="#" className="text-gray-900 font-medium hover:text-blue-400 hover:border-b-2 hover:border-blue-400 pb-1 transition-colors duration-200">Contact</a>
-        </nav>
         {/* Logo OSIX */}
         <div className="flex items-center">
           <img src="/galeria/osix_poweredby.png" alt="OSIX logo" className="h-10 w-auto" />
@@ -34,7 +27,7 @@ const Header = () => {
 
 // Barra superior de logos
 const TopLogosBar = () => (
-  <div className="w-full bg-white py-8 flex justify-center items-center space-x-8 md:space-x-16 px-4 md:px-12">
+  <div className="w-full bg-white py-8 flex justify-evenly items-center px-4 md:px-12">
     <img src="/galeria/osix_poweredby.png" alt="OSIX" className="h-14 md:h-20" />
     <img src="/galeria/eit_logo.png" alt="EIT" className="h-14 md:h-20" />
     <img src="/galeria/avte.png" alt="AVTE" className="h-14 md:h-20" />
@@ -43,7 +36,7 @@ const TopLogosBar = () => (
 
 // Sección central con móvil - Rediseñada según la imagen de referencia exacta
 const CentralShowcase = () => (
-  <section
+  <section id="central-showcase"
     className="w-full py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-16"
     style={{
       background: "linear-gradient(90deg, #f8d7da 0%, #e3e6f5 100%)"
@@ -79,7 +72,7 @@ const CentralShowcase = () => (
           <img
             src="/galeria/phone.png"
             alt="Mockup móvil"
-            className="relative z-10 w-[280px] md:w-[320px]"
+            className="relative z-10 w-[400px] md:w-[450px]"
           />
         </div>
         
@@ -219,7 +212,7 @@ const Hero = () => {
             Keep track of your medication flawlessly with our smart app
           </p>
           
-          <a href="#" className="flex items-center w-fit bg-pink-500 hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-full transition-all">
+          <a href="#central-showcase" className="flex items-center w-fit bg-pink-500 hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-full transition-all">
             Get started
             <ArrowRight className="ml-2 h-5 w-5" />
           </a>
@@ -240,95 +233,173 @@ const MarketSegmentsSection = () => (
     </div>
     
     {/* Fondo con forma de onda - la sección azul es la redondeada */}
-    <div className="absolute inset-0 w-full">
-      {/* Fondo azul redondeado en ambos extremos */}
-      <div className="absolute top-[80px] bottom-[80px] w-full" 
-        style={{ 
+    <div className="absolute inset-0 w-full flex items-center justify-center pointer-events-none">
+      {/* Fondo azul circular */}
+      <div 
+        style={{
+          width: '2000px',
+          height: '1000px',
           background: 'linear-gradient(to right, #3B82F6, #60A5FA)',
-          borderTopLeftRadius: '100% 100px', 
-          borderTopRightRadius: '100% 100px',
-          borderBottomLeftRadius: '100% 100px', 
-          borderBottomRightRadius: '100% 100px'
-        }}>
-      </div>
+          borderRadius: '50% / 50%',
+          position: 'absolute',
+          top: '45%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 1,
+        }}
+      />
     </div>
     
     <div className="relative z-20 pt-24 pb-20">
       
       {/* Contenedor para la imagen de Adam y los círculos superpuestos */}
-      <div className="relative">
-        {/* Imagen de las manos (robot y humano) - ocupando todo el ancho */}
-        <div className="w-full">
-          <img 
-            src="/galeria/UpscaledAdam.png" 
-            alt="AI and Human Connection" 
-            className="w-full"
+      <div className="relative flex items-center justify-center w-full" style={{ minHeight: '1100px' }}>
+        {/* Círculo azul de fondo, centrado */}
+        <div 
+          style={{
+            width: '2100px',
+            height: '1200px',
+            background: 'linear-gradient(to right, #3B82F6, #60A5FA)',
+            borderRadius: '50% / 50%',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 1,
+          }}
+        />
+        {/* Imagen de las manos (Adán), centrada y encima del círculo */}
+        <img 
+          src="/galeria/UpscaledAdam.png" 
+          alt="AI and Human Connection" 
+          className="relative z-10 mx-auto"
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      </div>
+      
+      {/* Posicionamiento exacto de los círculos como en la imagen */}
+      
+      {/* Círculo B2C - esquina superior izquierda */}
+      <div className="absolute top-[15%] left-[25%] z-10">
+        <div className="w-48 h-48 md:w-60 md:h-60 relative">
+          <img
+            src="/galeria/pink_circle.png"
+            alt="B2C Background"
+            className="w-full h-full object-contain"
           />
-        </div>
-        
-        {/* Posicionamiento exacto de los círculos como en la imagen */}
-        
-        {/* Círculo B2C - esquina superior izquierda */}
-        <div className="absolute top-[5%] left-[15%] z-10">
-          <div className="w-48 h-48 md:w-60 md:h-60 relative">
-            <img
-              src="/galeria/pink_circle.png"
-              alt="B2C Background"
-              className="w-full h-full object-contain"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-              <h3 className="text-3xl md:text-4xl font-bold mb-1">B2C</h3>
-              <ul className="text-center text-sm md:text-base space-y-0.5">
-                <li>Sick people</li>
-                <li>Care givers</li>
-                <li>Family members</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        {/* Círculo B2B - esquina superior derecha */}
-        <div className="absolute top-[5%] right-[15%] z-10">
-          <div className="w-48 h-48 md:w-60 md:h-60 relative">
-            <img
-              src="/galeria/pink_circle.png"
-              alt="B2B Background"
-              className="w-full h-full object-contain"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-              <h3 className="text-3xl md:text-4xl font-bold mb-1">B2B</h3>
-              <ul className="text-center text-sm md:text-base space-y-0.5">
-                <li>Residences</li>
-                <li>Insurance Companies</li>
-                <li>Private clinics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        {/* Círculo B2B2C - parte inferior central */}
-        <div className="absolute bottom-[5%] left-1/2 transform -translate-x-1/2 z-10">
-          <div className="w-48 h-48 md:w-60 md:h-60 relative">
-            <img
-              src="/galeria/pink_circle.png"
-              alt="B2B2C Background"
-              className="w-full h-full object-contain"
-            />
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-              <h3 className="text-3xl md:text-4xl font-bold mb-1">B2B2C</h3>
-              <ul className="text-center text-sm md:text-base space-y-0.5">
-                <li>Residences</li>
-                <li>Insurance Companies</li>
-              </ul>
-            </div>
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-1">B2C</h3>
+            <ul className="text-center text-sm md:text-base space-y-0.5">
+              <li>Sick people</li>
+              <li>Care givers</li>
+              <li>Family members</li>
+            </ul>
           </div>
         </div>
       </div>
       
-      {/* Espacio para compensar el círculo */}
-      <div className="h-24 md:h-32"></div>
+      {/* Círculo B2B - esquina superior derecha */}
+      <div className="absolute top-[15%] right-[25%] z-10">
+        <div className="w-48 h-48 md:w-60 md:h-60 relative">
+          <img
+            src="/galeria/pink_circle.png"
+            alt="B2B Background"
+            className="w-full h-full object-contain"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-1">B2B</h3>
+            <ul className="text-center text-sm md:text-base space-y-0.5">
+              <li>Residences</li>
+              <li>Insurance Companies</li>
+              <li>Private clinics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      {/* Círculo B2B2C - parte inferior central */}
+      <div className="absolute bottom-[16%] left-[45%] transform -translate-x-1/2 z-10">
+        <div className="w-48 h-48 md:w-60 md:h-60 relative">
+          <img
+            src="/galeria/pink_circle.png"
+            alt="B2B2C Background"
+            className="w-full h-full object-contain"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-1">B2B2C</h3>
+            <ul className="text-center text-sm md:text-base space-y-0.5">
+              <li>Residences</li>
+              <li>Insurance Companies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+);
+
+// ------------------ Sección: Web Dashboard Coming Soon ------------------
+const WebDashboardSection = () => (
+  <section
+    className="w-full py-16 px-4 flex flex-col items-center justify-center"
+    style={{
+      background: "linear-gradient(90deg, #f8d7da 0%, #e3e6f5 100%)"
+    }}
+  >
+    <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 w-full max-w-5xl">
+      {/* Texto principal */}
+      <div className="mb-8 md:mb-0 text-center md:text-left">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
+          +Web <span className="italic font-semibold">Dashboard</span>
+        </h2>
+        <p className="text-xl text-gray-800">coming soon...</p>
+      </div>
+      {/* Imagen del Mac */}
+      <div className="flex justify-center">
+        <img
+          src="/galeria/Mac.png"
+          alt="Web Dashboard preview"
+          className="w-[350px] md:w-[500px] "
+        />
+      </div>
+    </div>
+  </section>
+);
+
+// ------------------ Barra inferior (Footer) ------------------
+const FooterBar = () => (
+  <footer
+    className="w-full py-6 px-4 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4"
+    style={{
+      background: "#fff"
+    }}
+  >
+    {/* Icono web (placeholder) */}
+    <div className="flex items-center gap-2 mb-2 md:mb-0">
+      <img
+        src="/galeria/web_logo.png"
+        alt="Web icon"
+        className="w-10 h-10"
+      />
+    </div>
+    {/* Texto principal */}
+    <div className="text-lg md:text-xl font-semibold text-black text-center">
+      Coming Q4 2025
+    </div>
+    {/* Iconos de app stores (placeholders) */}
+    <div className="flex items-center gap-4 mt-2 md:mt-0">
+      <img
+        src="/galeria/PlayStore_logo.png"
+        alt="Play Store icon"
+        className="w-10 h-10"
+      />
+      <img
+        src="/galeria/AppStore_logo.png"
+        alt="App Store icon"
+        className="w-10 h-10"
+      />
+    </div>
+  </footer>
 );
 
 // ------------------ Componente Principal ------------------
@@ -342,6 +413,8 @@ const App = () => {
         <CentralShowcase />
         <AccessibilitySection />
         <MarketSegmentsSection />
+        <WebDashboardSection />
+        <FooterBar />
       </main>
     </div>
   );
